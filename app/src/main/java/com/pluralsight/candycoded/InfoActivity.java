@@ -27,9 +27,9 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        phoneText = findViewById(R.id.text_view_phone);
-        phoneText.setClickable(true);
-        phoneText.setOnClickListener(this::createPhoneIntent);
+//        phoneText = findViewById(R.id.text_view_phone);
+//        phoneText.setClickable(true);
+//        phoneText.setOnClickListener(this::createPhoneIntent);
 
         Uri uri = Uri.parse("android.resource://com.codeschool.candycoded/" + R.drawable.store_front);
         ImageView candyStoreImageView = (ImageView)findViewById(R.id.image_view_candy_store);
