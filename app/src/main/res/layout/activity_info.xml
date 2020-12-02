@@ -44,7 +44,9 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="8dp"
+        android:clickable="true"
         android:gravity="center_vertical"
+        android:onClick="createPhoneIntent"
         android:text="(012)345-6789"
         android:textColor="?android:attr/actionMenuTextColor"
         android:textSize="18sp"
@@ -73,9 +75,7 @@
         android:adjustViewBounds="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_view_map"
-        app:srcCompat="@android:drawable/stat_sys_phone_call"
-        android:clickable="true"
-        android:onClick="createPhoneIntent"/>
+        app:srcCompat="@android:drawable/stat_sys_phone_call" />
 
     <ImageView
         android:id="@+id/image_view_hours"
