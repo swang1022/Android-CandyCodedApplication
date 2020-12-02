@@ -24,6 +24,7 @@
       android:textSize="24sp" />
 
   <ListView
+      android:background="@android:color/darker_gray"
       android:id="@+id/list_view_candy"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

@@ -1,10 +1,14 @@
 package com.pluralsight.candycoded;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.View;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 import java.io.IOException;
@@ -13,6 +17,8 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 public class InfoActivity extends AppCompatActivity {
+    private static String GEO_LOCATION = "geo:0,0?q=618 E South St Orlando, FL 32801";
+    private static String MAP_PACKAGE = "com.google.android.apps.maps";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +34,17 @@ public class InfoActivity extends AppCompatActivity {
 
     }
 
-    // ***
-    // TODO - Task 2 - Launch the Google Maps Activity
-    // ***
+    public void createMapIntent(View view) {
+        Uri addressUri = Uri.parse(GEO_LOCATION);
+
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, addressUri);
+        mapIntent.setPackage(MAP_PACKAGE);
+
+        ComponentName name = mapIntent.resolveActivity(getPackageManager());
+        if (name != null) {
+            startActivity(mapIntent);
+        }
+    }
 
     // ***
     // TODO - Task 3 - Launch the Phone Activity
